@@ -1,0 +1,95 @@
+{
+  "run_parameters": {
+    "input": "sorted_pillow.tsv",
+    "output_dir": "analysis_outputs",
+    "years": [
+      2024,
+      2025
+    ],
+    "make_plots": true,
+    "debug": false,
+    "engine": "polars",
+    "polars_version": "1.38.1",
+    "lazy_collect_all": true
+  },
+  "date_min": "2024-01-01 00:04:05.000",
+  "date_max": "2025-12-31 10:48:00.000",
+  "available_years_in_dataset": {
+    "2024": 3614216,
+    "2025": 4351726
+  },
+  "analyzed_years": [
+    2024,
+    2025
+  ],
+  "stats": {
+    "rows_total": 20406669,
+    "rows_bad": 228115,
+    "rows_duplicated": 5689,
+    "checks_total_in_file": 7965942,
+    "checks_analyzed": 7965696,
+    "checks_with_mattress": 143522,
+    "checks_with_pillow": 7365859,
+    "checks_with_both": 114817,
+    "checks_only_mattress": 28705,
+    "checks_only_pillow": 7251042
+  },
+  "channel_counts": {
+    "marketplace": 7763505,
+    "non_marketplace": 202191
+  },
+  "brand_coverage": {
+    "registry_size": 49,
+    "accepted_registry_tokens": 43
+  },
+  "outputs": [
+    "analysis_outputs/brand_attach_mattress_to_odeyalo.csv",
+    "analysis_outputs/brand_attach_pillow_to_mattress.csv",
+    "analysis_outputs/category_distribution.csv",
+    "analysis_outputs/check_base_prepared.csv",
+    "analysis_outputs/decision_recommendations.csv",
+    "analysis_outputs/hook_hidden_affinities.csv",
+    "analysis_outputs/hour_top_items_mattress.csv",
+    "analysis_outputs/hour_top_items_mattress_by_channel.csv",
+    "analysis_outputs/hour_top_items_pillow.csv",
+    "analysis_outputs/hour_top_items_pillow_by_channel.csv",
+    "analysis_outputs/month_top_items_mattress.csv",
+    "analysis_outputs/month_top_items_mattress_by_channel.csv",
+    "analysis_outputs/month_top_items_pillow.csv",
+    "analysis_outputs/month_top_items_pillow_by_channel.csv",
+    "analysis_outputs/only_mattress_without_pillow_top_items.csv",
+    "analysis_outputs/only_pillow_without_mattress_top_items.csv",
+    "analysis_outputs/plots/brand_attach_mattress_to_odeyalo.png",
+    "analysis_outputs/plots/brand_attach_pillow_to_mattress.png",
+    "analysis_outputs/plots/category_distribution_checks_top15.png",
+    "analysis_outputs/plots/hook_hidden_affinities_top20.png",
+    "analysis_outputs/plots/hour_mattress_top1_attach.png",
+    "analysis_outputs/plots/hour_pillow_top1_attach.png",
+    "analysis_outputs/plots/mattress_category_mix_top15.png",
+    "analysis_outputs/plots/month_mattress_top1_attach.png",
+    "analysis_outputs/plots/month_pillow_top1_attach.png",
+    "analysis_outputs/plots/pillow_category_mix_top15.png",
+    "analysis_outputs/plots/reco_mattress_cross2_rate.png",
+    "analysis_outputs/plots/reco_pillow_cross2_rate.png",
+    "analysis_outputs/plots/summary_cross_vs_upsell.png",
+    "analysis_outputs/plots/weekday_mattress_top1_attach.png",
+    "analysis_outputs/plots/weekday_pillow_top1_attach.png",
+    "analysis_outputs/prepared_dataset.parquet",
+    "analysis_outputs/segment_brands_mattress.csv",
+    "analysis_outputs/segment_brands_pillow.csv",
+    "analysis_outputs/segment_recommendations_mattress.csv",
+    "analysis_outputs/segment_recommendations_mattress_by_type.csv",
+    "analysis_outputs/segment_recommendations_pillow.csv",
+    "analysis_outputs/segment_recommendations_pillow_by_type.csv",
+    "analysis_outputs/segment_top_items_mattress.csv",
+    "analysis_outputs/segment_top_items_pillow.csv",
+    "analysis_outputs/summary.json",
+    "analysis_outputs/top_lift_pairs_supported.csv",
+    "analysis_outputs/weekday_top_items_mattress.csv",
+    "analysis_outputs/weekday_top_items_mattress_by_channel.csv",
+    "analysis_outputs/weekday_top_items_pillow.csv",
+    "analysis_outputs/weekday_top_items_pillow_by_channel.csv",
+    "analysis_outputs/yearly_recommendation_stability.csv"
+  ],
+  "generated_at": "2026-03-09 14:52:21"
+}
