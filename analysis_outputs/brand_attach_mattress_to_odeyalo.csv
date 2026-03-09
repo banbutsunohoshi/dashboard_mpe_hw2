@@ -1,0 +1,12 @@
+target,brand,focus_item,brand_checks,checks_with_focus_item,attach_rate,attach_rate_ci_low,attach_rate_ci_high
+mattress,ormatek verda,Одеяло,131,43,0.3282,0.2537,0.4125
+mattress,askona buyson,Одеяло,1567,426,0.2719,0.2504,0.2944
+mattress,askona serta,Одеяло,560,141,0.2518,0.2176,0.2893
+mattress,plitex,Одеяло,105,23,0.219,0.1506,0.3073
+mattress,askona,Одеяло,1477,320,0.2167,0.1964,0.2384
+mattress,ormatek,Одеяло,1109,240,0.2164,0.1932,0.2416
+mattress,blue sleep,Одеяло,180,31,0.1722,0.1241,0.2341
+mattress,intex,Одеяло,9013,1444,0.1602,0.1528,0.1679
+mattress,bestway,Одеяло,4807,749,0.1558,0.1458,0.1663
+mattress,trelax,Одеяло,87,6,0.069,0.032,0.1424
+mattress,dimax,Одеяло,1522,27,0.0177,0.0122,0.0257
