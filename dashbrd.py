@@ -1,26 +1,13 @@
-"""
-Cross-sell / Up-sell Dashboard — Подушки, Матрасы и сопутствующие товары
-Курс «Маркетплейсы и платформенная экономика» | ФЭН НИУ ВШЭ
-
-Запуск:
-    pip install streamlit pandas
-    streamlit run dashboard.py
-"""
-
 import json
 import streamlit as st
 import pandas as pd
 from pathlib import Path
 
-# ──────────────────────────────────────────
-# PATHS — поменяйте при необходимости
-# ──────────────────────────────────────────
+
 DATA_DIR = Path("analysis_outputs")
 PLOTS_DIR = Path("plots")
 
-# ──────────────────────────────────────────
-# PAGE CONFIG
-# ──────────────────────────────────────────
+
 st.set_page_config(
     page_title="Cross-sell / Up-sell Dashboard",
     page_icon="🛏️",
@@ -28,9 +15,7 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# ──────────────────────────────────────────
-# CUSTOM CSS
-# ──────────────────────────────────────────
+# CSS настроечки тут будут 
 st.markdown("""
 <style>
     /* — Typography — */
@@ -165,9 +150,8 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-# ──────────────────────────────────────────
-# DATA LOADING
-# ──────────────────────────────────────────
+# загрузка данных 
+
 @st.cache_data
 def load_summary():
     with open(DATA_DIR / "summary.json", encoding="utf-8") as f:
@@ -178,7 +162,6 @@ def load_csv(name):
     return pd.read_csv(DATA_DIR / name)
 
 def plot(name):
-    """Display a plot PNG by filename."""
     st.image(str(PLOTS_DIR / name), use_container_width=True)
 
 def kpi(label, value):
@@ -204,9 +187,8 @@ def method(text):
     st.markdown(f'<div class="method-box">✅ {text}</div>', unsafe_allow_html=True)
 
 
-# ──────────────────────────────────────────
-# SIDEBAR
-# ──────────────────────────────────────────
+# боковое меню
+
 with st.sidebar:
     st.markdown("## 🛏️ Навигация")
     st.markdown("---")
@@ -236,9 +218,9 @@ summary = load_summary()
 stats = summary["stats"]
 
 
-# ══════════════════════════════════════════
-# PAGE: OVERVIEW
-# ══════════════════════════════════════════
+
+# обзор
+
 if page.startswith("🏠"):
     st.markdown("""
     <div class="title-bar">
@@ -246,7 +228,7 @@ if page.startswith("🏠"):
         <p>Аналитика совместных покупок: подушки, матрасы и сопутствующие товары &nbsp;|&nbsp; Январь 2024 — Декабрь 2025</p>
     </div>""", unsafe_allow_html=True)
 
-    # — KPI Row 1 —
+
     section("Масштаб данных")
     c1, c2, c3, c4 = st.columns(4)
     with c1: kpi("Строк исходных", "20,4 млн")
@@ -256,7 +238,7 @@ if page.startswith("🏠"):
 
     st.markdown("<br>", unsafe_allow_html=True)
 
-    # — KPI Row 2 —
+
     c5, c6, c7, c8 = st.columns(4)
     with c5: kpi("Совместных покупок (подушка + матрас)", f'{stats["checks_with_both"]:,.0f}'.replace(",", " "))
     with c6: kpi("Удалено некачественных строк", f'{stats["rows_bad"]:,.0f}'.replace(",", " "))
@@ -272,7 +254,7 @@ if page.startswith("🏠"):
         f'это значительный потенциал для cross-sell стратегий.'
     )
 
-    # — Channel split —
+
     st.markdown("<br>", unsafe_allow_html=True)
     subsection("Распределение по каналам")
     ch = summary["channel_counts"]
@@ -280,7 +262,7 @@ if page.startswith("🏠"):
     with c1: kpi("Маркетплейс", f'{ch["marketplace"]:,.0f}'.replace(",", " "))
     with c2: kpi("Не-маркетплейс", f'{ch["non_marketplace"]:,.0f}'.replace(",", " "))
 
-    # — Year split —
+
     st.markdown("<br>", unsafe_allow_html=True)
     subsection("Распределение по годам")
     yrs = summary["available_years_in_dataset"]
@@ -289,9 +271,9 @@ if page.startswith("🏠"):
     with c2: kpi("2025", f'{yrs["2025"]:,.0f}'.replace(",", " "))
 
 
-# ══════════════════════════════════════════
-# PAGE: METHODOLOGY
-# ══════════════════════════════════════════
+
+# методология
+
 elif page.startswith("🔬"):
     st.markdown("""
     <div class="title-bar">
@@ -299,7 +281,7 @@ elif page.startswith("🔬"):
         <p>Прозрачность процесса: от сырых данных до чистого датасета</p>
     </div>""", unsafe_allow_html=True)
 
-    # — Filter audit —
+
     section("Этапы фильтрации данных")
     st.markdown(
         "Каждый шаг очистки задокументирован. Ниже — полный аудит: сколько строк было "
@@ -326,11 +308,11 @@ elif page.startswith("🔬"):
         "Ни один полноценный товар не был ошибочно удалён."
     )
 
-    # — Bad rows examples —
+
     with st.expander("📋 Примеры удалённых строк (первые 10)"):
         st.dataframe(audit.head(10), use_container_width=True, hide_index=True)
 
-    # — Data limitations —
+
     section("Ограничения и «слепые зоны»")
     lim = pd.DataFrame({
         "Показатель": [
@@ -364,7 +346,7 @@ elif page.startswith("🔬"):
         "показатели cross-sell — нижняя граница реального потенциала."
     )
 
-    # — Enrichment —
+
     section("Обогащение данных")
     st.markdown(
         "Исходные данные содержали только текстовое название товара. "
@@ -390,9 +372,9 @@ elif page.startswith("🔬"):
     )
 
 
-# ══════════════════════════════════════════
-# PAGE: CATEGORIES
-# ══════════════════════════════════════════
+
+# категории
+
 elif page.startswith("📊"):
     st.markdown("""
     <div class="title-bar">
@@ -425,9 +407,9 @@ elif page.startswith("📊"):
         st.dataframe(cat_display, use_container_width=True, hide_index=True)
 
 
-# ══════════════════════════════════════════
-# PAGE: CROSS-SELL
-# ══════════════════════════════════════════
+
+# CROSS-SELL
+
 elif page.startswith("🔗"):
     st.markdown("""
     <div class="title-bar">
@@ -490,7 +472,7 @@ elif page.startswith("🔗"):
         display_tp["Ср. сумма ₽"] = display_tp["Ср. сумма ₽"].round(0).astype(int)
         st.dataframe(display_tp, use_container_width=True, hide_index=True)
 
-    # — Only-categories —
+
     st.markdown("<br>", unsafe_allow_html=True)
     section("Чеки без пересечения")
     c1, c2 = st.columns(2)
@@ -515,9 +497,9 @@ elif page.startswith("🔗"):
         st.dataframe(om_display, use_container_width=True, hide_index=True)
 
 
-# ══════════════════════════════════════════
-# PAGE: UP-SELL
-# ══════════════════════════════════════════
+
+# UP-SELL
+
 elif page.startswith("💰"):
     st.markdown("""
     <div class="title-bar">
@@ -533,7 +515,7 @@ elif page.startswith("💰"):
         'и основание/ламели. Для подушек самый значимый up-sell — покупка матраса в том же чеке.'
     )
 
-    # Detailed tables
+
     section("Детальная таблица рекомендаций по сегментам")
 
     target_choice = st.selectbox("Целевой товар:", ["Матрас", "Подушка"])
@@ -568,9 +550,9 @@ elif page.startswith("💰"):
     st.dataframe(display_dr, use_container_width=True, hide_index=True)
 
 
-# ══════════════════════════════════════════
-# PAGE: SEASONALITY
-# ══════════════════════════════════════════
+
+# сезонность
+
 elif page.startswith("📅"):
     st.markdown("""
     <div class="title-bar">
@@ -619,7 +601,7 @@ elif page.startswith("📅"):
             "покупатели «добирают» товары для дома."
         )
 
-    # — Stability —
+
     section("Стабильность рекомендаций: 2024 vs 2025")
     stab = load_csv("yearly_recommendation_stability.csv")
     stab_all = stab[stab["channel"] == "all"].copy()
@@ -645,9 +627,9 @@ elif page.startswith("📅"):
     )
 
 
-# ══════════════════════════════════════════
-# PAGE: BRANDS
-# ══════════════════════════════════════════
+
+# бренды
+
 elif page.startswith("🏷"):
     st.markdown("""
     <div class="title-bar">
@@ -685,7 +667,6 @@ elif page.startswith("🏷"):
         "Это сигнал для формирования бандлов и промо-акций."
     )
 
-    # — Brand penetration by segment —
     st.markdown("<br>", unsafe_allow_html=True)
     section("Топ-бренды по ценовым сегментам")
 
@@ -706,9 +687,9 @@ elif page.startswith("🏷"):
         st.dataframe(sb_p_display, use_container_width=True, hide_index=True)
 
 
-# ══════════════════════════════════════════
-# PAGE: HIDDEN AFFINITIES
-# ══════════════════════════════════════════
+
+# спрятанные аффинитеты
+
 elif page.startswith("🔮"):
     st.markdown("""
     <div class="title-bar">
@@ -757,9 +738,9 @@ elif page.startswith("🔮"):
     st.dataframe(lp_display, use_container_width=True, hide_index=True)
 
 
-# ══════════════════════════════════════════
-# PAGE: RECOMMENDATIONS
-# ══════════════════════════════════════════
+
+# реки
+
 elif page.startswith("📋"):
     st.markdown("""
     <div class="title-bar">
@@ -803,7 +784,7 @@ elif page.startswith("📋"):
     </div>
     """, unsafe_allow_html=True)
 
-    # — Summary chart —
+
     st.markdown("<br>", unsafe_allow_html=True)
     section("Сводная визуализация")
     plot("summary_cross_vs_upsell.png")
