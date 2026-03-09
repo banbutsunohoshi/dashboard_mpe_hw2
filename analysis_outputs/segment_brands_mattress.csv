@@ -1,0 +1,71 @@
+target,channel,price_bin,checks_in_segment,rank,brand,checks_with_brand,brand_penetration,brand_penetration_ci_low,brand_penetration_ci_high
+mattress,all,<20k,128730,1,intex,9007,0.07,0.0686,0.0714
+mattress,all,<20k,128730,2,bestway,4799,0.0373,0.0363,0.0383
+mattress,all,<20k,128730,3,dimax,1461,0.0113,0.0108,0.0119
+mattress,all,<20k,128730,4,askona buyson,1365,0.0106,0.0101,0.0112
+mattress,all,<20k,128730,5,askona,1046,0.0081,0.0076,0.0086
+mattress,all,20-30k,5739,1,askona,188,0.0328,0.0285,0.0377
+mattress,all,20-30k,5739,2,askona buyson,172,0.03,0.0259,0.0347
+mattress,all,20-30k,5739,3,askona serta,83,0.0145,0.0117,0.0179
+mattress,all,20-30k,5739,4,ormatek,79,0.0138,0.0111,0.0171
+mattress,all,20-30k,5739,5,blue sleep,42,0.0073,0.0054,0.0099
+mattress,all,30-50k,5468,1,askona,166,0.0304,0.0261,0.0352
+mattress,all,30-50k,5468,2,askona serta,147,0.0269,0.0229,0.0315
+mattress,all,30-50k,5468,3,blue sleep,40,0.0073,0.0054,0.0099
+mattress,all,30-50k,5468,4,askona buyson,29,0.0053,0.0037,0.0076
+mattress,all,30-50k,5468,5,dimax,23,0.0042,0.0028,0.0063
+mattress,all,50-100k,3094,1,askona serta,192,0.0621,0.0541,0.0711
+mattress,all,50-100k,3094,2,askona,59,0.0191,0.0148,0.0245
+mattress,all,50-100k,3094,3,ormatek verda,21,0.0068,0.0044,0.0104
+mattress,all,50-100k,3094,4,blue sleep,12,0.0039,0.0022,0.0068
+mattress,all,50-100k,3094,5,ormatek proson,3,0.001,0.0003,0.0028
+mattress,all,100k+,491,1,ormatek verda,106,0.2159,0.1818,0.2544
+mattress,all,100k+,491,2,askona serta,59,0.1202,0.0943,0.1519
+mattress,all,100k+,491,3,askona,18,0.0367,0.0233,0.0572
+mattress,all,100k+,491,4,tempur,11,0.0224,0.0126,0.0397
+mattress,all,100k+,491,5,ormatek,1,0.002,0.0004,0.0114
+mattress,marketplace,<20k,120513,1,intex,8975,0.0745,0.073,0.076
+mattress,marketplace,<20k,120513,2,bestway,4790,0.0397,0.0387,0.0409
+mattress,marketplace,<20k,120513,3,dimax,1429,0.0119,0.0113,0.0125
+mattress,marketplace,<20k,120513,4,askona buyson,1302,0.0108,0.0102,0.0114
+mattress,marketplace,<20k,120513,5,ormatek,1007,0.0084,0.0079,0.0089
+mattress,marketplace,20-30k,2016,1,askona buyson,171,0.0848,0.0734,0.0978
+mattress,marketplace,20-30k,2016,2,askona,131,0.065,0.055,0.0766
+mattress,marketplace,20-30k,2016,3,ormatek,79,0.0392,0.0316,0.0486
+mattress,marketplace,20-30k,2016,4,blue sleep,42,0.0208,0.0154,0.028
+mattress,marketplace,20-30k,2016,5,dimax,21,0.0104,0.0068,0.0159
+mattress,marketplace,30-50k,580,1,askona,66,0.1138,0.0904,0.1422
+mattress,marketplace,30-50k,580,2,blue sleep,40,0.069,0.0511,0.0926
+mattress,marketplace,30-50k,580,3,askona buyson,28,0.0483,0.0336,0.0689
+mattress,marketplace,30-50k,580,4,ormatek,18,0.031,0.0197,0.0485
+mattress,marketplace,30-50k,580,5,dimax,8,0.0138,0.007,0.027
+mattress,marketplace,50-100k,100,1,blue sleep,12,0.12,0.07,0.1981
+mattress,marketplace,50-100k,100,2,askona,7,0.07,0.0343,0.1375
+mattress,marketplace,50-100k,100,3,ormatek,3,0.03,0.0103,0.0845
+mattress,marketplace,50-100k,100,4,askona serta,1,0.01,0.0018,0.0545
+mattress,marketplace,50-100k,100,5,vegas,1,0.01,0.0018,0.0545
+mattress,marketplace,100k+,11,1,ormatek,1,0.0909,0.0162,0.3774
+mattress,non_marketplace,<20k,8217,1,askona,309,0.0376,0.0337,0.0419
+mattress,non_marketplace,<20k,8217,2,askona serta,79,0.0096,0.0077,0.012
+mattress,non_marketplace,<20k,8217,3,askona buyson,63,0.0077,0.006,0.0098
+mattress,non_marketplace,<20k,8217,4,trelax,54,0.0066,0.005,0.0086
+mattress,non_marketplace,<20k,8217,5,intex,32,0.0039,0.0028,0.0055
+mattress,non_marketplace,20-30k,3723,1,askona serta,83,0.0223,0.018,0.0276
+mattress,non_marketplace,20-30k,3723,2,askona,57,0.0153,0.0118,0.0198
+mattress,non_marketplace,20-30k,3723,3,trelax,15,0.004,0.0024,0.0066
+mattress,non_marketplace,20-30k,3723,4,dimax,14,0.0038,0.0022,0.0063
+mattress,non_marketplace,20-30k,3723,5,askona buyson,1,0.0003,0.0,0.0015
+mattress,non_marketplace,30-50k,4888,1,askona serta,144,0.0295,0.0251,0.0346
+mattress,non_marketplace,30-50k,4888,2,askona,100,0.0205,0.0168,0.0248
+mattress,non_marketplace,30-50k,4888,3,dimax,15,0.0031,0.0019,0.0051
+mattress,non_marketplace,30-50k,4888,4,trelax,2,0.0004,0.0001,0.0015
+mattress,non_marketplace,30-50k,4888,5,ormatek verda,2,0.0004,0.0001,0.0015
+mattress,non_marketplace,50-100k,2994,1,askona serta,191,0.0638,0.0556,0.0731
+mattress,non_marketplace,50-100k,2994,2,askona,52,0.0174,0.0133,0.0227
+mattress,non_marketplace,50-100k,2994,3,ormatek verda,21,0.007,0.0046,0.0107
+mattress,non_marketplace,50-100k,2994,4,ormatek proson,3,0.001,0.0003,0.0029
+mattress,non_marketplace,50-100k,2994,5,dimax,2,0.0007,0.0002,0.0024
+mattress,non_marketplace,100k+,480,1,ormatek verda,106,0.2208,0.186,0.2601
+mattress,non_marketplace,100k+,480,2,askona serta,59,0.1229,0.0965,0.1553
+mattress,non_marketplace,100k+,480,3,askona,18,0.0375,0.0238,0.0585
+mattress,non_marketplace,100k+,480,4,tempur,11,0.0229,0.0128,0.0406
